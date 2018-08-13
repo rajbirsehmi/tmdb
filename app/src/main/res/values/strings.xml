@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TMDb</string>
+    <string name="API_KEY">a9ae1c468f2ef27ce48280503e3a81f0</string>
+</resources>
