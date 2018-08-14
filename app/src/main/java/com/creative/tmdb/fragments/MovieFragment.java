@@ -11,19 +11,21 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.creative.tmdb.R;
+import com.creative.tmdb.model.LoadPopularMoviesImpl;
+import com.creative.tmdb.presenter.LoadPopularMovies;
 
 import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieFragment extends Fragment {
+public class MovieFragment extends Fragment implements LoadPopularMovies {
 
+    private LoadPopularMoviesImpl loadPopularMovies;
 
     public MovieFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,4 +34,10 @@ public class MovieFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_movie, container, false);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        loadPopularMovies = new LoadPopularMoviesImpl(this, getContext());
+        loadPopularMovies.loadPopularMovies();
+    }
 }
