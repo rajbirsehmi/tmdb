@@ -18,6 +18,7 @@ public class FragmentChangeListener implements BottomNavigationView.OnNavigation
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        fragmentProcessor.removeChildViews();
         switch (menuItem.getItemId()) {
             case R.id.mi_home:
                 fragmentProcessor.setHomeFragment();
@@ -26,8 +27,10 @@ public class FragmentChangeListener implements BottomNavigationView.OnNavigation
                 fragmentProcessor.setMovieFragment();
                 break;
             case R.id.mi_tv_shows:
+                fragmentProcessor.setTvShowFragment();
                 break;
             case R.id.mi_celebs:
+                fragmentProcessor.setCelebsFragment();
                 break;
         }
         return false;

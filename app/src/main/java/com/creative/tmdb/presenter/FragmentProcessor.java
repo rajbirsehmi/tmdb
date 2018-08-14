@@ -5,4 +5,5 @@ public interface FragmentProcessor {
     void setMovieFragment();
     void setTvShowFragment();
     void setCelebsFragment();
+    void removeChildViews();
 }
