@@ -6,7 +6,6 @@ import com.creative.tmdb.R;
 import com.creative.tmdb.adapter.PopularMovieSeeAllAdapter;
 import com.creative.tmdb.jsonmapping.popularmovie.JsonPopularMovieMapping;
 import com.creative.tmdb.jsonmapping.popularmovie.JsonPopularMovieMetadata;
-import com.creative.tmdb.persistence.Cache;
 import com.creative.tmdb.presenter.PopularMoviesPaging;
 import com.creative.tmdb.retrofit.RetrofitInstance;
 import com.creative.tmdb.retrofitcall.CallPopularMoviesMetaData;
@@ -54,7 +53,7 @@ public class PopularMoviesPagingImpl {
 
     public void loadPrevPage() {
         if (currentPage == 1) {
-            popularMoviesPaging.notifyAlreadyAtFirstPage(context.getResources().getString(R.string.already_at_first_page));
+            popularMoviesPaging.notifyAlreadyAtFirstPage(context.getResources().getString(R.string.error_message_already_at_first_page));
             return;
         }
         currentPage--;

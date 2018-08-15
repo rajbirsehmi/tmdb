@@ -20,6 +20,10 @@
         <activity
             android:name=".SeeAllPopularMovieActivity"
             android:label="@string/title_activity_see_all_popular_movie"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MovieDetailActivity"
+            android:label="@string/title_activity_movie_detail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

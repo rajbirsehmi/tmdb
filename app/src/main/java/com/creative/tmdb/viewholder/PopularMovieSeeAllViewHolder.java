@@ -39,10 +39,10 @@ public class PopularMovieSeeAllViewHolder extends RecyclerView.ViewHolder {
                 .applyDefaultRequestOptions(requestOptions)
                 .load(Uri.parse(context.getResources().getString(R.string.poster_url_prefix) + popularMovie.getPosterPath()))
                 .into(ivPoster);
-        tvVoteCount.setText(Integer.toString(popularMovie.getVoteCount()));
+        tvVoteCount.setText("Vote Count : " + Integer.toString(popularMovie.getVoteCount()));
         tvTitle.setText(popularMovie.getTitle());
         tvVoteAverage.setText(Float.toString(popularMovie.getVoteAverage()));
-        tvPopularity.setText(Float.toString(popularMovie.getPopularity()));
-        tvReleaseDate.setText(popularMovie.getReleaseDate());
+        tvPopularity.setText("Popularity : " + Float.toString(popularMovie.getPopularity()));
+        tvReleaseDate.setText("Release Date : " + popularMovie.getReleaseDate());
     }
 }
