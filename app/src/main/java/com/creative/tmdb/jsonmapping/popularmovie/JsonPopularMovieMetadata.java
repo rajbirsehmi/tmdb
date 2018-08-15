@@ -12,7 +12,7 @@ public class JsonPopularMovieMetadata {
     @Expose
     private int totalResults;
 
-    @SerializedName("total_Pages")
+    @SerializedName("total_pages")
     @Expose
     private int totalPages;
 

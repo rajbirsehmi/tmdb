@@ -25,5 +25,6 @@
     <string name="popular_movies_sort_desc">popularity.desc</string>
     <string name="popular_movies_sort_asc">popularity.asc</string>
     <string name="title_activity_see_all_popular_movie">Popular Movies...</string>
+    <string name="already_at_first_page">Already at first page..</string>
 
 </resources>

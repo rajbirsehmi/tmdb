@@ -1,28 +1,26 @@
 package com.creative.tmdb;
 
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
 
-import com.creative.tmdb.adapter.PopularMovieOverviewAdapter;
-import com.creative.tmdb.model.LoadPopularMoviesImpl;
-import com.creative.tmdb.presenter.LoadPopularMovies;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.creative.tmdb.adapter.PopularMovieSeeAllAdapter;
+import com.creative.tmdb.model.PopularMoviesPagingImpl;
+import com.creative.tmdb.presenter.PopularMoviesPaging;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class SeeAllPopularMovieActivity extends AppCompatActivity implements LoadPopularMovies {
+public class SeeAllPopularMovieActivity extends AppCompatActivity implements PopularMoviesPaging {
 
     private RecyclerView rvPopularMovies;
-    private LoadPopularMoviesImpl loadPopularMovies;
-    private int currentPage = 1;
-    private int columnCount = 2;
+    private PopularMoviesPagingImpl popularMoviesPaging;
+    private TextView tvMetadataPage, tvMetadataResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,22 +30,21 @@ public class SeeAllPopularMovieActivity extends AppCompatActivity implements Loa
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        tvMetadataPage = findViewById(R.id.tv_metadata_pages);
+        tvMetadataResults = findViewById(R.id.tv_metadata_results);
+
         rvPopularMovies = findViewById(R.id.rv_popular_movies);
         rvPopularMovies.setItemAnimator(new DefaultItemAnimator());
-        rvPopularMovies.setLayoutManager(new GridLayoutManager(getBaseContext(), columnCount));
+        rvPopularMovies.setLayoutManager(new LinearLayoutManager(getBaseContext()));
 
-        loadPopularMovies = new LoadPopularMoviesImpl(this, getBaseContext());
-        loadPopularMovies.loadPopularMovies(currentPage);
+        popularMoviesPaging = new PopularMoviesPagingImpl(this, getBaseContext());
+        popularMoviesPaging.loadPopularMovies(1);
 
         findViewById(R.id.fab_next_page).setOnClickListener((view) -> {
-            currentPage++;
-            loadPopularMovies.loadPopularMovies(currentPage);
+            popularMoviesPaging.loadNextPage();
         });
         findViewById(R.id.fab_prev_page).setOnClickListener((view) -> {
-            if (currentPage == 1)
-                return;
-            currentPage--;
-            loadPopularMovies.loadPopularMovies(currentPage);
+            popularMoviesPaging.loadPrevPage();
         });
     }
 
@@ -60,7 +57,18 @@ public class SeeAllPopularMovieActivity extends AppCompatActivity implements Loa
     }
 
     @Override
-    public void setPopularMovieAdapterToRecyclerView(PopularMovieOverviewAdapter popularMovieOverviewAdapter) {
-        rvPopularMovies.setAdapter(popularMovieOverviewAdapter);
+    public void setPopularMovieAdapterToRecyclerView(PopularMovieSeeAllAdapter popularMovieSeeAllAdapter) {
+        rvPopularMovies.setAdapter(popularMovieSeeAllAdapter);
+    }
+
+    @Override
+    public void updateMetadata(int currentPage, int totalPages, int totalResults, int currentResultMax, int currentResultMin) {
+        tvMetadataPage.setText("Displaying " + currentPage + " of " + totalPages + " Page(s)");
+        tvMetadataResults.setText("Displaying " + currentResultMin + " to " + currentResultMax + " of " + totalResults + " Movies");
+    }
+
+    @Override
+    public void notifyAlreadyAtFirstPage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
