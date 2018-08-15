@@ -3,21 +3,23 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/iv_movie_poster"
-        android:layout_width="185px"
-        android:layout_height="278px"
+        android:id="@+id/iv_movie_poster_portrait"
+        android:layout_width="@dimen/poster_portrait_width"
+        android:layout_height="@dimen/poster_portrait_height"
+        android:minHeight="@dimen/poster_portrait_height_min"
+        android:minWidth="@dimen/poster_portrait_width_min"
         android:adjustViewBounds="true" />
 
     <TextView
-        android:id="@+id/tv_movie_name"
-        android:layout_width="185px"
+        android:id="@+id/tv_movie_title"
+        android:layout_width="@dimen/poster_portrait_width"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:text="This is demo Name"
         android:gravity="center"
-        android:textSize="12sp" />
+        android:textSize="15sp" />
 
 </LinearLayout>

@@ -16,7 +16,7 @@
     <string name="label_calebs">Celebs</string>
 
     <!-- Prefixes -->
-    <string name="image_url_prefix">http://image.tmdb.org/t/p/w185</string>
+    <string name="poster_url_prefix">https://image.tmdb.org/t/p/w185</string>
 
     <!--Base URL for Retrofit Requests-->
     <string name="base_url">https://api.themoviedb.org/3/</string>
@@ -24,5 +24,6 @@
     <!--Sorting Strings-->
     <string name="popular_movies_sort_desc">popularity.desc</string>
     <string name="popular_movies_sort_asc">popularity.asc</string>
+    <string name="title_activity_see_all_popular_movie">Popular Movies...</string>
 
 </resources>

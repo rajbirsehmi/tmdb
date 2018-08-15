@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 
 public interface CallPopularMoviesMetaData {
     @GET("movie/popular")
-    Call<JsonPopularMovieMetadata> getJsonPopularMoviesMetaData(@Query("api_key") String apiKey, @Query("sort_by") String sortBy);
+    Call<JsonPopularMovieMetadata> getJsonPopularMoviesMetaData(@Query("api_key") String apiKey, @Query("sort_by") String sortBy, @Query("page") int pageNumber);
 }

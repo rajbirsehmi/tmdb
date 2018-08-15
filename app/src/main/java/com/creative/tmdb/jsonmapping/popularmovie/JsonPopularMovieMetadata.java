@@ -18,7 +18,7 @@ public class JsonPopularMovieMetadata {
 
     @SerializedName("results")
     @Expose
-    private JsonPopularMovieMapping jsonPopularMovieMapping;
+    private JsonPopularMovieMapping[] jsonPopularMovieMapping;
 
     public int getCurrentPage() {
         return currentPage;
@@ -44,11 +44,11 @@ public class JsonPopularMovieMetadata {
         this.totalPages = totalPages;
     }
 
-    public JsonPopularMovieMapping getJsonPopularMovieMapping() {
+    public JsonPopularMovieMapping[] getJsonPopularMovieMapping() {
         return jsonPopularMovieMapping;
     }
 
-    public void setJsonPopularMovieMapping(JsonPopularMovieMapping jsonPopularMovieMapping) {
+    public void setJsonPopularMovieMapping(JsonPopularMovieMapping[] jsonPopularMovieMapping) {
         this.jsonPopularMovieMapping = jsonPopularMovieMapping;
     }
 }

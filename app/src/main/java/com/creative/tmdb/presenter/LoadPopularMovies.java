@@ -1,5 +1,7 @@
 package com.creative.tmdb.presenter;
 
-public interface LoadPopularMovies {
+import com.creative.tmdb.adapter.PopularMovieOverviewAdapter;
 
+public interface LoadPopularMovies {
+    void setPopularMovieAdapterToRecyclerView(PopularMovieOverviewAdapter popularMovieOverviewAdapter);
 }
