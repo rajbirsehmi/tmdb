@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_movie_detail_star_popularity_release_date"/>
+        <include layout="@layout/layout_movie_detail_star_popularity_release_date_link"/>
 
         <!--<View-->
             <!--android:layout_width="match_parent"-->
@@ -33,7 +33,7 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/movie_detail_overview_text_size"/>
 
-
+        <include layout="@layout/layout_media_detail_wallpaper_poster"/>
 
     </LinearLayout>
 

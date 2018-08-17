@@ -8,4 +8,5 @@ public interface MovieDetail {
     void setPopularity(float popularity);
     void setReleaseDate(String releaseDate);
     void setOverview(String overview);
+    void setImdbListener(String imdbId);
 }

@@ -27,7 +27,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_movie_wallpapers"
+        android:id="@+id/rv_movie_wallpapers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -57,7 +57,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_movie_posters"
+        android:id="@+id/rv_movie_posters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

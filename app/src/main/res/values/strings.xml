@@ -37,5 +37,7 @@
 
     <!--Misc-->
     <string name="action_settings">Settings</string>
+    <string name="label_open_link">Open in IMDb</string>
+    <string name="imdb_base_url">https://www.imdb.com/title/</string>
 
 </resources>

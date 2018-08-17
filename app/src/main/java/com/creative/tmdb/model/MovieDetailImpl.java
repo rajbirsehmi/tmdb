@@ -40,6 +40,7 @@ public class MovieDetailImpl {
                         movieDetail.setPopularity(detail.getPopularity());
                         movieDetail.setReleaseDate(detail.getReleaseDate());
                         movieDetail.setOverview(detail.getOverview());
+                        movieDetail.setImdbListener(detail.getImdbId());
                     }
 
                     @Override
