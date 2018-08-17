@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/icon_star" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_movie_vote_average"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="8.3 / 10.0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/movie_detail_star_popularity_date_text_size" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_movie_vote_count"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Count : 12344"
+            android:textSize="@dimen/movie_detail_star_popularity_date_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/icon_popularity" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_movie_popularity"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="8.3 out of 10.0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/movie_detail_star_popularity_date_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/icon_release_date" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_movie_release_date"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="2018-12-12"
+            android:textSize="@dimen/movie_detail_star_popularity_date_text_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

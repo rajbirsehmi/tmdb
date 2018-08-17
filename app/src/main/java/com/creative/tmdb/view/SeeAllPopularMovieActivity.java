@@ -1,7 +1,8 @@
-package com.creative.tmdb;
+package com.creative.tmdb.view;
 
 import android.os.Bundle;
 
+import com.creative.tmdb.R;
 import com.creative.tmdb.adapter.PopularMovieSeeAllAdapter;
 import com.creative.tmdb.model.PopularMoviesPagingImpl;
 import com.creative.tmdb.presenter.PopularMoviesPaging;

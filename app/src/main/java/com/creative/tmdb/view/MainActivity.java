@@ -1,8 +1,9 @@
-package com.creative.tmdb;
+package com.creative.tmdb.view;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
+import com.creative.tmdb.R;
 import com.creative.tmdb.fragments.CelebsFragment;
 import com.creative.tmdb.fragments.HomeFragment;
 import com.creative.tmdb.fragments.MovieFragment;
