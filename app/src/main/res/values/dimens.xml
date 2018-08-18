@@ -27,4 +27,6 @@
     <dimen name="movie_image_wallpaper_height">197dp</dimen>
     <dimen name="movie_image_poster_width">131dp</dimen>
     <dimen name="movie_image_poster_height">197dp</dimen>
+    <dimen name="icon_width_gallery">25dp</dimen>
+    <dimen name="icon_height_gallery">25dp</dimen>
 </resources>
