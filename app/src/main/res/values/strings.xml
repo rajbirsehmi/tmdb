@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TMDb</string>
+    <string name="app_name">The Movie Database</string>
     <string name="API_KEY">a9ae1c468f2ef27ce48280503e3a81f0</string>
     <string name="title_activity_see_all_popular_movie">Popular Movies...</string>
     <string name="title_activity_gallery_activity_poster">All Posters...</string>
@@ -19,6 +19,8 @@
     <string name="label_tv">TV Shows</string>
     <string name="label_home">Home</string>
     <string name="label_calebs">Celebs</string>
+    <string name="label_service_download_image">The Movie Database...</string>
+    <string name="label_service_downloading_image">Your Image is Downloaded...</string>
 
     <!--Prefixes-->
     <string name="poster_url_prefix">https://image.tmdb.org/t/p/w500</string>
@@ -41,7 +43,8 @@
     <string name="label_open_link">Open in IMDb</string>
     <string name="imdb_base_url">https://www.imdb.com/title/</string>
     <string name="title_activity_gallery_activity_wallpaper">All Wallpapers...</string>
-    <string name="label_service_download_image">Download Image...</string>
-    <string name="label_service_downloading_image">Your Image is Downloaded...</string>
+    <string name="error_message_wrong_request_code">Error Occured.\\nWrong Request Code</string>
+    <string name="label_permission_granted">Permission Graned</string>
+    <string name="label_permission_denied">Permission Denied</string>
 
 </resources>

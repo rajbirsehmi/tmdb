@@ -12,8 +12,9 @@ import com.creative.tmdb.R;
 import com.creative.tmdb.adapter.MovieDetailGalleryPosterAdapter;
 import com.creative.tmdb.model.GalleryAllPosterImpl;
 import com.creative.tmdb.presenter.GalleryAllPoster;
+import com.creative.tmdb.presenter.PermissionCheck;
 
-public class GalleryPosterActivity extends AppCompatActivity implements GalleryAllPoster {
+public class GalleryPosterActivity extends AppCompatActivity implements GalleryAllPoster, PermissionCheck {
 
     private RecyclerView rvGallery;
     private GalleryAllPosterImpl galleryAllPoster;

@@ -3,6 +3,7 @@ package com.creative.tmdb.downloadservice;
 import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
+import android.media.RingtoneManager;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.IBinder;
@@ -42,7 +43,7 @@ public class DownloadService extends Service {
                 NotificationManagerCompat
                         .from(DownloadService.this)
                         .notify(randomid, new Notification.Builder(DownloadService.this)
-                                .setSmallIcon(R.drawable.icon_app)
+                                .setSmallIcon(R.drawable.icon_download_complete)
                                 .setContentTitle(getResources().getString(R.string.label_service_download_image))
                                 .setContentText(getResources().getString(R.string.label_service_downloading_image))
                                 .build());
