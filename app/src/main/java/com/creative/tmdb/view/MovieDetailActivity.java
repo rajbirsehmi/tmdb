@@ -8,6 +8,8 @@ import com.creative.tmdb.R;
 import com.creative.tmdb.adapter.MovieDetailPosterAdapter;
 import com.creative.tmdb.adapter.MovieDetailWallpaperAdapter;
 import com.creative.tmdb.listener.ImdbLinkListener;
+import com.creative.tmdb.listener.OpenAllPosterListener;
+import com.creative.tmdb.listener.OpenAllWallpaperListener;
 import com.creative.tmdb.model.MovieDetailImpl;
 import com.creative.tmdb.model.MovieImagesImpl;
 import com.creative.tmdb.presenter.MovieDetail;
@@ -15,7 +17,6 @@ import com.creative.tmdb.presenter.MovieImages;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,14 +42,16 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
     private MovieDetailImpl movieDetail;
     private MovieImagesImpl movieImages;
 
+    private int movieId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        movieId = getIntent().getIntExtra("movie_id", -1);
 
         collapsingToolbarLayout = findViewById(R.id.toolbar_layout);
 
@@ -60,6 +63,9 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         tvOverview = findViewById(R.id.tv_movie_overview);
         llOpenLinkInImdb = findViewById(R.id.ll_open_link_in_imdb);
 
+        findViewById(R.id.btn_see_all_movie_posters).setOnClickListener(new OpenAllPosterListener(movieId));
+        findViewById(R.id.btn_see_all_movie_wallpapers).setOnClickListener(new OpenAllWallpaperListener(movieId));
+
         rvPoster = findViewById(R.id.rv_movie_posters);
         rvPoster.setItemAnimator(new DefaultItemAnimator());
         rvPoster.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -69,10 +75,10 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         rvWallpaper.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
 
         movieDetail = new MovieDetailImpl(this, getBaseContext());
-        movieDetail.loadDetail(getIntent().getIntExtra("movie_id", -1));
+        movieDetail.loadDetail(movieId);
 
         movieImages = new MovieImagesImpl(this, getBaseContext());
-        movieImages.loadWallpapersAndPoster(getIntent().getIntExtra("movie_id", -1));
+        movieImages.loadWallpapersAndPoster(movieId);
     }
 
     @Override
