@@ -1,7 +1,7 @@
 package com.creative.tmdb.presenter;
 
-import com.creative.tmdb.adapter.MovieDetailGalleryWallpaperAdapter;
+import com.creative.tmdb.adapter.MovieGalleryWallpaperAdapter;
 
 public interface GalleryAllWallpaper {
-    void setAllWallpaperGaleryAdapterToRecyclerView(MovieDetailGalleryWallpaperAdapter adapter);
+    void setAllWallpaperGaleryAdapterToRecyclerView(MovieGalleryWallpaperAdapter adapter);
 }

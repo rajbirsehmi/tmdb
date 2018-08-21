@@ -46,5 +46,7 @@
     <string name="error_message_wrong_request_code">Error Occured.\\nWrong Request Code</string>
     <string name="label_permission_granted">Permission Graned</string>
     <string name="label_permission_denied">Permission Denied</string>
+    <string name="label_movie_detail_cast">Cast...</string>
+    <string name="label_movie_detail_crew">Crew...</string>
 
 </resources>

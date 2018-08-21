@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.creative.tmdb.R;
-import com.creative.tmdb.adapter.MovieDetailGalleryWallpaperAdapter;
+import com.creative.tmdb.adapter.MovieGalleryWallpaperAdapter;
 import com.creative.tmdb.model.GalleryAllWallpaperImpl;
 import com.creative.tmdb.model.PermissionCheckImpl;
 import com.creative.tmdb.presenter.GalleryAllWallpaper;
@@ -77,7 +77,7 @@ public class GalleryWallpaperActivity extends AppCompatActivity implements Galle
     }
 
     @Override
-    public void setAllWallpaperGaleryAdapterToRecyclerView(MovieDetailGalleryWallpaperAdapter adapter) {
+    public void setAllWallpaperGaleryAdapterToRecyclerView(MovieGalleryWallpaperAdapter adapter) {
         rvGallery.setAdapter(adapter);
     }
 }

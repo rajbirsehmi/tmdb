@@ -3,7 +3,7 @@ package com.creative.tmdb.model;
 import android.content.Context;
 
 import com.creative.tmdb.R;
-import com.creative.tmdb.adapter.MovieDetailGalleryPosterAdapter;
+import com.creative.tmdb.adapter.MovieGalleryPosterAdapter;
 import com.creative.tmdb.jsonmapping.moviedetail.JsonMovieDetailImage;
 import com.creative.tmdb.jsonmapping.moviedetail.JsonMovieDetailWallpaperAndPoster;
 import com.creative.tmdb.presenter.GalleryAllPoster;
@@ -35,7 +35,7 @@ public class GalleryAllPosterImpl {
                     public void onResponse(Call<JsonMovieDetailImage> call, Response<JsonMovieDetailImage> response) {
                         JsonMovieDetailImage jsonMovieDetailImage = response.body();
                         JsonMovieDetailWallpaperAndPoster[] posters = jsonMovieDetailImage.getJsonMovieDetailPosters();
-                        poster.setAllPosterGaleryAdapterToRecyclerView(new MovieDetailGalleryPosterAdapter(posters));
+                        poster.setAllPosterGaleryAdapterToRecyclerView(new MovieGalleryPosterAdapter(posters));
                     }
 
                     @Override

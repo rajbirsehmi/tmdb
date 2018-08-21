@@ -13,13 +13,13 @@ import com.creative.tmdb.pojomapping.Image;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MovieDetailGalleryPosterViewHolder extends RecyclerView.ViewHolder {
+public class MovieGalleryPosterViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView ivPoster;
     private TextView tvVoteAverage;
     private ImageButton btnDownload;
 
-    public MovieDetailGalleryPosterViewHolder(@NonNull View itemView) {
+    public MovieGalleryPosterViewHolder(@NonNull View itemView) {
         super(itemView);
         ivPoster = itemView.findViewById(R.id.iv_gallery_image);
         tvVoteAverage = itemView.findViewById(R.id.tv_gallery_vote_average);

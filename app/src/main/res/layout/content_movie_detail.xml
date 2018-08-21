@@ -16,14 +16,6 @@
 
         <include layout="@layout/layout_movie_detail_star_popularity_release_date_link"/>
 
-        <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="1px"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:layout_marginRight="5dp"-->
-            <!--android:background="@android:color/darker_gray"/>-->
-
         <TextView
             android:id="@+id/tv_movie_overview"
             android:layout_width="match_parent"
@@ -33,7 +25,9 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/movie_detail_overview_text_size"/>
 
-        <include layout="@layout/layout_media_detail_wallpaper_poster"/>
+        <include layout="@layout/layout_movie_detail_wallpaper_poster"/>
+
+        <include layout="@layout/layout_movie_detail_cast_crew"/>
 
     </LinearLayout>
 

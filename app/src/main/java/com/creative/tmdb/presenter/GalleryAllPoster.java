@@ -1,7 +1,7 @@
 package com.creative.tmdb.presenter;
 
-import com.creative.tmdb.adapter.MovieDetailGalleryPosterAdapter;
+import com.creative.tmdb.adapter.MovieGalleryPosterAdapter;
 
 public interface GalleryAllPoster {
-    void setAllPosterGaleryAdapterToRecyclerView(MovieDetailGalleryPosterAdapter adapter);
+    void setAllPosterGaleryAdapterToRecyclerView(MovieGalleryPosterAdapter adapter);
 }

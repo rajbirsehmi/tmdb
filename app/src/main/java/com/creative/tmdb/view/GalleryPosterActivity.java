@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.creative.tmdb.R;
-import com.creative.tmdb.adapter.MovieDetailGalleryPosterAdapter;
+import com.creative.tmdb.adapter.MovieGalleryPosterAdapter;
 import com.creative.tmdb.model.GalleryAllPosterImpl;
 import com.creative.tmdb.presenter.GalleryAllPoster;
 import com.creative.tmdb.presenter.PermissionCheck;
@@ -44,7 +44,7 @@ public class GalleryPosterActivity extends AppCompatActivity implements GalleryA
     }
 
     @Override
-    public void setAllPosterGaleryAdapterToRecyclerView(MovieDetailGalleryPosterAdapter adapter) {
+    public void setAllPosterGaleryAdapterToRecyclerView(MovieGalleryPosterAdapter adapter) {
         rvGallery.setAdapter(adapter);
     }
 }

@@ -9,36 +9,36 @@ import com.creative.tmdb.animation.Anim;
 import com.creative.tmdb.jsonmapping.moviedetail.JsonMovieDetailWallpaperAndPoster;
 import com.creative.tmdb.parser.ImageParser;
 import com.creative.tmdb.pojomapping.Image;
-import com.creative.tmdb.viewholder.MovieDetailGalleryWallpaperViewHolder;
+import com.creative.tmdb.viewholder.MovieGalleryPosterViewHolder;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MovieDetailGalleryWallpaperAdapter extends RecyclerView.Adapter<MovieDetailGalleryWallpaperViewHolder> {
+public class MovieGalleryPosterAdapter extends RecyclerView.Adapter<MovieGalleryPosterViewHolder> {
 
-    private JsonMovieDetailWallpaperAndPoster[] wallpaper;
+    private JsonMovieDetailWallpaperAndPoster[] posters;
 
-    public MovieDetailGalleryWallpaperAdapter(JsonMovieDetailWallpaperAndPoster[] wallpaper) {
-
-        this.wallpaper = wallpaper;
+    public MovieGalleryPosterAdapter(JsonMovieDetailWallpaperAndPoster[] posters) {
+        this.posters = posters;
     }
 
     @NonNull
     @Override
-    public MovieDetailGalleryWallpaperViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieGalleryPosterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View myCustomView = LayoutInflater.from(parent.getContext()).inflate(R.layout.template_gallery, parent, false);
-        return new MovieDetailGalleryWallpaperViewHolder(myCustomView);
+        return new MovieGalleryPosterViewHolder(myCustomView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieDetailGalleryWallpaperViewHolder holder, int position) {
-        Image poster = ImageParser.parse(wallpaper[position]);
+    public void onBindViewHolder(@NonNull MovieGalleryPosterViewHolder holder, int position) {
+        Image poster = ImageParser.parse(posters[position]);
         Anim.setFadeInAnimation(holder.itemView);
         holder.bindDataToView(poster);
     }
 
+
     @Override
     public int getItemCount() {
-        return wallpaper.length;
+        return posters.length;
     }
 }
