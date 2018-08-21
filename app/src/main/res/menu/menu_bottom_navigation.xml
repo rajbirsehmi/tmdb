@@ -17,4 +17,8 @@
         android:id="@+id/mi_celebs"
         android:icon="@drawable/icon_celebs"
         android:title="@string/label_calebs" />
+    <item
+        android:id="@+id/mi_settings"
+        android:icon="@drawable/icon_settings"
+        android:title="@string/label_settings" />
 </menu>

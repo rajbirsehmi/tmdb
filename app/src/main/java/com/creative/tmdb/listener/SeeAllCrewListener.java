@@ -4,16 +4,16 @@ import android.view.View;
 
 import com.creative.tmdb.utils.Navigate;
 
-public class OpenAllWallpaperListener implements View.OnClickListener {
+public class SeeAllCrewListener implements View.OnClickListener {
 
     private int movieId;
 
-    public OpenAllWallpaperListener(int movieId) {
+    public SeeAllCrewListener(int movieId) {
         this.movieId = movieId;
     }
 
     @Override
     public void onClick(View v) {
-        Navigate.openGalleryAllWallpaper(v.getContext(), movieId);
+        Navigate.toSeeAllCrew(v.getContext(), movieId);
     }
 }

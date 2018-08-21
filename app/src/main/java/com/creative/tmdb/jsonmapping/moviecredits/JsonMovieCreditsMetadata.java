@@ -9,11 +9,11 @@ public class JsonMovieCreditsMetadata {
     @Expose
     private int movieId;
 
-    @SerializedName("castMembers")
+    @SerializedName("cast")
     @Expose
     private JsonMovieCreditCast[] castMembers;
 
-    @SerializedName("crew_id")
+    @SerializedName("crew")
     @Expose
     private JsonMovieCreditCrew[] crewMembers;
 

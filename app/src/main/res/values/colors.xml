@@ -5,4 +5,5 @@
     <color name="colorAccent">#ff80cbc4</color>
     <color name="colorBackground">#ff303030</color>
     <color name="golden_yellow">#FFDF00</color>
+    <color name="color_bottom_banner_image">#79000000</color>
 </resources>

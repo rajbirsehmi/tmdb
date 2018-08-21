@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_cast_crew"
+    android:layout_width="@dimen/movie_image_poster_width"
+    android:layout_height="@dimen/movie_image_poster_height"
+    android:layout_margin="5dp" />

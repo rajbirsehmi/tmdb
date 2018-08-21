@@ -61,9 +61,9 @@ public class GalleryWallpaperActivity extends AppCompatActivity implements Galle
             return;
         }
         if (grantResults.length > 0 && grantResults[0] == PERMISSION_GRANTED && grantResults[1] == PERMISSION_GRANTED) {
-            Toast.makeText(this, getResources().getString(R.string.label_permission_granted), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.toast_permission_granted), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, getResources().getString(R.string.label_permission_denied), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.toast_permission_denied), Toast.LENGTH_SHORT).show();
         }
     }
 

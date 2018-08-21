@@ -9,19 +9,21 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.creative.tmdb.R;
-import com.creative.tmdb.adapter.MovieCreditsCastAdapter;
-import com.creative.tmdb.adapter.MovieCreditsCrewAdapter;
+import com.creative.tmdb.adapter.MovieDetailCastAdapter;
+import com.creative.tmdb.adapter.MovieDetailCrewAdapter;
 import com.creative.tmdb.adapter.MovieDetailPosterAdapter;
 import com.creative.tmdb.adapter.MovieDetailWallpaperAdapter;
 import com.creative.tmdb.listener.ImdbLinkListener;
-import com.creative.tmdb.listener.OpenAllPosterListener;
-import com.creative.tmdb.listener.OpenAllWallpaperListener;
+import com.creative.tmdb.listener.SeeAllCastListener;
+import com.creative.tmdb.listener.SeeAllCrewListener;
+import com.creative.tmdb.listener.SeeAllPosterListener;
+import com.creative.tmdb.listener.SeeAllWallpaperListener;
 import com.creative.tmdb.model.MovieCreditCastCrewImpl;
 import com.creative.tmdb.model.MovieDetailImpl;
 import com.creative.tmdb.model.MovieImagesImpl;
-import com.creative.tmdb.presenter.MovieCreditsCastCrew;
+import com.creative.tmdb.presenter.MovieDetailCastCrew;
 import com.creative.tmdb.presenter.MovieDetail;
-import com.creative.tmdb.presenter.MovieImages;
+import com.creative.tmdb.presenter.MovieDetailImages;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +31,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MovieDetailActivity extends AppCompatActivity implements MovieDetail, MovieImages, MovieCreditsCastCrew {
+public class MovieDetailDetailActivity extends AppCompatActivity implements MovieDetail, MovieDetailImages, MovieDetailCastCrew {
 
     private ImageView ivWidePoster;
     private TextView tvVoteCount;
@@ -48,7 +50,6 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
 
     private int movieId;
 
-    private LinearLayoutManager linearLayoutManager;
     private DefaultItemAnimator defaultItemAnimator;
 
     @Override
@@ -62,7 +63,6 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
 
         collapsingToolbarLayout = findViewById(R.id.toolbar_layout);
 
-        linearLayoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
         defaultItemAnimator = new DefaultItemAnimator();
 
         ivWidePoster = findViewById(R.id.iv_movie_poster_wide);
@@ -73,24 +73,26 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         tvOverview = findViewById(R.id.tv_movie_overview);
         llOpenLinkInImdb = findViewById(R.id.ll_open_link_in_imdb);
 
-        findViewById(R.id.btn_see_all_movie_posters).setOnClickListener(new OpenAllPosterListener(movieId));
-        findViewById(R.id.btn_see_all_movie_wallpapers).setOnClickListener(new OpenAllWallpaperListener(movieId));
+        findViewById(R.id.btn_see_all_movie_posters).setOnClickListener(new SeeAllPosterListener(movieId));
+        findViewById(R.id.btn_see_all_movie_wallpapers).setOnClickListener(new SeeAllWallpaperListener(movieId));
+        findViewById(R.id.btn_see_all_movie_cast).setOnClickListener(new SeeAllCastListener(movieId));
+        findViewById(R.id.btn_see_all_movie_crew).setOnClickListener(new SeeAllCrewListener(movieId));
 
         rvPoster = findViewById(R.id.rv_movie_posters);
         rvPoster.setItemAnimator(defaultItemAnimator);
-        rvPoster.setLayoutManager(linearLayoutManager);
+        rvPoster.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
 
         rvWallpaper = findViewById(R.id.rv_movie_wallpapers);
         rvWallpaper.setItemAnimator(defaultItemAnimator);
-        rvWallpaper.setLayoutManager(linearLayoutManager);
+        rvWallpaper.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
 
         rvCast = findViewById(R.id.rv_movie_cast);
         rvCast.setItemAnimator(defaultItemAnimator);
-        rvCast.setLayoutManager(linearLayoutManager);
+        rvCast.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
 
         rvCrew = findViewById(R.id.rv_movie_crew);
         rvCrew.setItemAnimator(defaultItemAnimator);
-        rvCrew.setLayoutManager(linearLayoutManager);
+        rvCrew.setLayoutManager(new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
 
         movieDetail = new MovieDetailImpl(this, getBaseContext());
         movieDetail.loadDetail(movieId);
@@ -164,12 +166,12 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
     }
 
     @Override
-    public void setCastAdapter(MovieCreditsCastAdapter castAdapter) {
+    public void setCastAdapter(MovieDetailCastAdapter castAdapter) {
         rvCast.setAdapter(castAdapter);
     }
 
     @Override
-    public void setCrewAdapter(MovieCreditsCrewAdapter crewAdapter) {
+    public void setCrewAdapter(MovieDetailCrewAdapter crewAdapter) {
         rvCrew.setAdapter(crewAdapter);
     }
 }

@@ -4,16 +4,16 @@ import android.view.View;
 
 import com.creative.tmdb.utils.Navigate;
 
-public class OpenAllPosterListener implements View.OnClickListener {
+public class SeeAllPosterListener implements View.OnClickListener {
 
     private int movieId;
 
-    public OpenAllPosterListener(int movieId) {
+    public SeeAllPosterListener(int movieId) {
         this.movieId = movieId;
     }
 
     @Override
     public void onClick(View v) {
-        Navigate.openGalleryAllPoster(v.getContext(), movieId);
+        Navigate.toGalleryAllPoster(v.getContext(), movieId);
     }
 }

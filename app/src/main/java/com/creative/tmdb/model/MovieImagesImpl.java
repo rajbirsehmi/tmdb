@@ -7,7 +7,7 @@ import com.creative.tmdb.adapter.MovieDetailPosterAdapter;
 import com.creative.tmdb.adapter.MovieDetailWallpaperAdapter;
 import com.creative.tmdb.jsonmapping.moviedetail.JsonMovieDetailImage;
 import com.creative.tmdb.jsonmapping.moviedetail.JsonMovieDetailWallpaperAndPoster;
-import com.creative.tmdb.presenter.MovieImages;
+import com.creative.tmdb.presenter.MovieDetailImages;
 import com.creative.tmdb.retrofit.RetrofitInstance;
 import com.creative.tmdb.retrofitcall.CallMovieImages;
 
@@ -18,12 +18,12 @@ import retrofit2.Retrofit;
 
 public class MovieImagesImpl {
 
-    private MovieImages movieImages;
+    private MovieDetailImages movieDetailImages;
     private Context context;
     private Retrofit retrofit;
 
-    public MovieImagesImpl(MovieImages movieImages, Context context) {
-        this.movieImages = movieImages;
+    public MovieImagesImpl(MovieDetailImages movieDetailImages, Context context) {
+        this.movieDetailImages = movieDetailImages;
         this.context = context;
         retrofit = RetrofitInstance.getRetrofitInstance(context);
     }
@@ -38,8 +38,8 @@ public class MovieImagesImpl {
                         JsonMovieDetailImage jsonMovieDetailImage = response.body();
                         JsonMovieDetailWallpaperAndPoster[] posters = jsonMovieDetailImage.getJsonMovieDetailPosters();
                         JsonMovieDetailWallpaperAndPoster[] wallpapers = jsonMovieDetailImage.getJsonMovieDetailWallpapers();
-                        movieImages.setAdapterToPosterRecyclerView(new MovieDetailPosterAdapter(posters));
-                        movieImages.setAdapterToWallpaperRecyclerView(new MovieDetailWallpaperAdapter(wallpapers));
+                        movieDetailImages.setAdapterToPosterRecyclerView(new MovieDetailPosterAdapter(posters));
+                        movieDetailImages.setAdapterToWallpaperRecyclerView(new MovieDetailWallpaperAdapter(wallpapers));
                     }
 
                     @Override
