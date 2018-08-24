@@ -24,7 +24,7 @@
             android:label="@string/title_activity_see_all_popular_movie"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".view.MovieDetailDetailActivity"
+            android:name=".view.MovieDetailActivity"
             android:label="@string/title_activity_movie_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".view.GalleryPosterActivity" />
@@ -36,7 +36,11 @@
             android:exported="true" />
 
         <activity android:name=".view.CreditsAllCastActivity" />
-        <activity android:name=".view.CreditsAllCrewActivity"></activity>
+        <activity android:name=".view.CreditsAllCrewActivity" />
+        <activity
+            android:name=".view.ViewCastMemberActivity"
+            android:label="@string/title_activity_view_cast"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

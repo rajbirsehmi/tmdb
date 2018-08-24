@@ -31,7 +31,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MovieDetailDetailActivity extends AppCompatActivity implements MovieDetail, MovieDetailImages, MovieDetailCastCrew {
+public class MovieDetailActivity extends AppCompatActivity implements MovieDetail, MovieDetailImages, MovieDetailCastCrew {
 
     private ImageView ivWidePoster;
     private TextView tvVoteCount;
