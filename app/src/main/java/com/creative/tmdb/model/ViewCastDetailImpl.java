@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.creative.tmdb.R;
 import com.creative.tmdb.jsonmapping.moviecredits.JsonCreditsCast;
+import com.creative.tmdb.jsonmapping.moviecredits.JsonCreditsCastPerson;
 import com.creative.tmdb.presenter.ViewCastDetail;
 import com.creative.tmdb.retrofit.RetrofitInstance;
 import com.creative.tmdb.retrofitcall.CallCastDetail;
@@ -31,7 +32,16 @@ public class ViewCastDetailImpl {
                     @Override
                     public void onResponse(Call<JsonCreditsCast> call, Response<JsonCreditsCast> response) {
                         JsonCreditsCast creditsCast = response.body();
-                        
+                        JsonCreditsCastPerson castPerson = creditsCast.getCreditsCastPerson();
+                        viewCastDetail.setBackgroundImage(context.getResources().getString(R.string.poster_url_prefix_high) + castPerson.getProfileImageUrl());
+                        viewCastDetail.setCastMemberName(castPerson.getActorName());
+                        viewCastDetail.setCastMemberDepartment(creditsCast.getDepartment());
+                        viewCastDetail.setCastMemberPopularity(castPerson.getPopularity());
+//                        if (castPerson.getGender() == 1)
+//                            viewCastDetail.setCastGender(context.getResources().getString(R.string.gender_female));
+//                        else
+//                            viewCastDetail.setCastGender(context.getResources().getString(R.string.gender_male));
+                        viewCastDetail.loadMoreData(castPerson.getActorId());
                     }
 
                     @Override

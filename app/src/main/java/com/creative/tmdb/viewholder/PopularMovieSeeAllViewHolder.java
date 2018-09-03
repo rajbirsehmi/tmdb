@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.creative.tmdb.R;
-import com.creative.tmdb.listener.ShowMovieDetailListener;
+import com.creative.tmdb.listener.OpenMovieDetailListener;
 import com.creative.tmdb.pojomapping.PopularMovie;
 
 import androidx.annotation.NonNull;
@@ -35,7 +35,7 @@ public class PopularMovieSeeAllViewHolder extends RecyclerView.ViewHolder {
         requestOptions.override((int) context.getResources().getDimension(R.dimen.poster_portrait_see_all_width), (int) context.getResources().getDimension(R.dimen.poster_portrait_see_all_width));
     }
 
-    public void bindDataToViews(PopularMovie popularMovie, ShowMovieDetailListener showMovieDetailListener) {
+    public void bindDataToViews(PopularMovie popularMovie, OpenMovieDetailListener openMovieDetailListener) {
         Glide.with(context)
                 .applyDefaultRequestOptions(requestOptions)
                 .load(Uri.parse(context.getResources().getString(R.string.poster_url_prefix) + popularMovie.getPosterPath()))
@@ -45,6 +45,6 @@ public class PopularMovieSeeAllViewHolder extends RecyclerView.ViewHolder {
         tvVoteAverage.setText(Float.toString(popularMovie.getVoteAverage()));
         tvPopularity.setText("Popularity : " + Float.toString(popularMovie.getPopularity()));
         tvReleaseDate.setText("Release Date : " + popularMovie.getReleaseDate());
-        itemView.setOnClickListener(showMovieDetailListener);
+        itemView.setOnClickListener(openMovieDetailListener);
     }
 }

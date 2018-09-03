@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.creative.tmdb.R;
 import com.creative.tmdb.adapter.PopularMovieOverviewAdapter;
-import com.creative.tmdb.listener.SeeAllListener;
+import com.creative.tmdb.listener.SeeAllPopularMovieListener;
 import com.creative.tmdb.model.LoadPopularMoviesImpl;
 import com.creative.tmdb.presenter.LoadPopularMovies;
 
@@ -45,7 +45,7 @@ public class MovieFragment extends Fragment implements LoadPopularMovies {
         rvPopularMovies.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext(), LinearLayoutManager.HORIZONTAL, false));
         rvPopularMovies.setItemAnimator(new DefaultItemAnimator());
 
-        getActivity().findViewById(R.id.btn_see_all_popular_movies).setOnClickListener(new SeeAllListener());
+        getActivity().findViewById(R.id.btn_see_all_popular_movies).setOnClickListener(new SeeAllPopularMovieListener());
 
         loadPopularMovies = new LoadPopularMoviesImpl(this, getContext());
         loadPopularMovies.loadPopularMovies(1);

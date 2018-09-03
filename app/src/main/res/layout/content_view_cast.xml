@@ -13,6 +13,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/layout_cast_member_department_dob_popularity_pob_imdblink" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="@string/label_biography"
+            android:textSize="@dimen/label_title_text_size" />
+
+        <TextView
+            android:id="@+id/tv_cast_member_biography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="@dimen/movie_detail_overview_text_size" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

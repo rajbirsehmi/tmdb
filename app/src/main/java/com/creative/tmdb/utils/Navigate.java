@@ -10,6 +10,7 @@ import com.creative.tmdb.view.GalleryPosterActivity;
 import com.creative.tmdb.view.GalleryWallpaperActivity;
 import com.creative.tmdb.view.MovieDetailActivity;
 import com.creative.tmdb.view.SeeAllPopularMovieActivity;
+import com.creative.tmdb.view.ViewCastMemberActivity;
 
 public class Navigate {
     public static void toAllPopularMovies(Context context) {
@@ -60,7 +61,7 @@ public class Navigate {
     }
 
     public static void toCastMember(Context context, String creditId) {
-        Intent intent = new Intent(context, ViewCastActivity.class);
+        Intent intent = new Intent(context, ViewCastMemberActivity.class);
         intent.putExtra("credit_id", creditId);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);

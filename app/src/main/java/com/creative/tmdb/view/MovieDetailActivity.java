@@ -13,7 +13,7 @@ import com.creative.tmdb.adapter.MovieDetailCastAdapter;
 import com.creative.tmdb.adapter.MovieDetailCrewAdapter;
 import com.creative.tmdb.adapter.MovieDetailPosterAdapter;
 import com.creative.tmdb.adapter.MovieDetailWallpaperAdapter;
-import com.creative.tmdb.listener.ImdbLinkListener;
+import com.creative.tmdb.listener.ImdbMovieLinkListener;
 import com.creative.tmdb.listener.SeeAllCastListener;
 import com.creative.tmdb.listener.SeeAllCrewListener;
 import com.creative.tmdb.listener.SeeAllPosterListener;
@@ -152,7 +152,7 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
 
     @Override
     public void setImdbListener(String imdbId) {
-        llOpenLinkInImdb.setOnClickListener(new ImdbLinkListener(imdbId));
+        llOpenLinkInImdb.setOnClickListener(new ImdbMovieLinkListener(imdbId));
     }
 
     @Override

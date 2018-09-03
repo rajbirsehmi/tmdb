@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:padding="5dp"
+            android:src="@drawable/icon_department" />
+
+        <TextView
+            android:id="@+id/tv_department"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Actor"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/cast_member_department_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:padding="5dp"
+            android:src="@drawable/icon_date_of_birth" />
+
+        <TextView
+            android:id="@+id/tv_cast_member_date_of_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/cast_member_popularity_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:padding="5dp"
+            android:src="@drawable/icon_popularity" />
+
+        <TextView
+            android:id="@+id/tv_cast_member_popularity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="12.345"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/cast_member_popularity_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:padding="5dp"
+            android:src="@drawable/icon_place_of_birth" />
+
+        <TextView
+            android:id="@+id/tv_cast_member_place_of_birth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Female"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/cast_member_gender_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_open_link_in_imdb"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon_height_movie_detail"
+            android:padding="5dp"
+            android:src="@drawable/icon_open_link" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/label_open_link"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/cast_member_gender_text_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -5,12 +5,12 @@ import android.view.View;
 
 import com.creative.tmdb.utils.Navigate;
 
-public class ShowMovieDetailListener implements View.OnClickListener {
+public class OpenMovieDetailListener implements View.OnClickListener {
 
     private Context context;
     private int movieId;
 
-    public ShowMovieDetailListener(Context context, int movieId) {
+    public OpenMovieDetailListener(Context context, int movieId) {
         this.context = context;
         this.movieId = movieId;
     }

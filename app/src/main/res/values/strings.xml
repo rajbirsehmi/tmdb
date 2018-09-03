@@ -44,7 +44,8 @@
     <!--Misc-->
     <string name="action_settings">Settings</string>
     <string name="label_open_link">Open in IMDb</string>
-    <string name="imdb_base_url">https://www.imdb.com/title/</string>
+    <string name="imdb_movie_base_url">https://www.imdb.com/title/</string>
+    <string name="imdb_cast_member_base_url">https://www.imdb.com/name/</string>
     <string name="title_activity_gallery_activity_wallpaper">All Wallpapers...</string>
     <string name="error_message_wrong_request_code">Error Occured.\\nWrong Request Code</string>
     <string name="toast_permission_granted">Permission Graned</string>
@@ -141,5 +142,8 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="gender_female">Female</string>
+    <string name="gender_male">Male</string>
+    <string name="label_biography">Biography...</string>
 
 </resources>

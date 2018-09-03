@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import com.creative.tmdb.R;
 import com.creative.tmdb.animation.Anim;
 import com.creative.tmdb.jsonmapping.popularmovie.JsonPopularMovieMapping;
-import com.creative.tmdb.listener.ShowMovieDetailListener;
+import com.creative.tmdb.listener.OpenMovieDetailListener;
 import com.creative.tmdb.parser.PopularMovieParser;
 import com.creative.tmdb.pojomapping.PopularMovie;
 import com.creative.tmdb.viewholder.PopularMovieOverviewViewHolder;
@@ -34,7 +34,7 @@ public class PopularMovieOverviewAdapter extends RecyclerView.Adapter<PopularMov
     public void onBindViewHolder(@NonNull PopularMovieOverviewViewHolder holder, int position) {
         PopularMovie popularMovie = PopularMovieParser.parseMovie(movieMappings[position]);
         Anim.setFadeInAnimation(holder.itemView);
-        holder.bindDataToViews(popularMovie, new ShowMovieDetailListener(holder.itemView.getContext(), popularMovie.getMovieId()));
+        holder.bindDataToViews(popularMovie, new OpenMovieDetailListener(holder.itemView.getContext(), popularMovie.getMovieId()));
     }
 
     @Override

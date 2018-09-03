@@ -23,6 +23,12 @@ public class CreditsAllCrewViewHolder extends RecyclerView.ViewHolder {
 
     public void bindDataToViews(CrewMember member) {
         tvNameAndJobTitle.setText(member.getCrewMemberName() + " (" + member.getDepartment() + ")");
+        if (member.getProfileImageUrl() == null) {
+            Glide.with(itemView.getContext())
+                    .load(itemView.getContext().getResources().getDrawable(R.drawable.img_movie_detail_see_all_cast_crew_no_preview_available))
+                    .into(ivPosterImage);
+            return;
+        }
         Glide.with(itemView.getContext())
                 .load(itemView.getContext().getResources().getString(R.string.poster_url_prefix) + member.getProfileImageUrl())
                 .into(ivPosterImage);

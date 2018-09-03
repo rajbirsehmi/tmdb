@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="app_bar_height_cast_member">550dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
     <dimen name="poster_wide_width">185dp</dimen>
@@ -29,4 +30,7 @@
     <dimen name="movie_image_poster_height">197dp</dimen>
     <dimen name="icon_width_gallery">25dp</dimen>
     <dimen name="icon_height_gallery">25dp</dimen>
+    <dimen name="cast_member_department_text_size">12dp</dimen>
+    <dimen name="cast_member_gender_text_size">12dp</dimen>
+    <dimen name="cast_member_popularity_text_size" />
 </resources>

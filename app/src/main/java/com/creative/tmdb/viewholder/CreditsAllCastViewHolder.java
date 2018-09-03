@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.creative.tmdb.R;
+import com.creative.tmdb.listener.OpenCastMemberDetail;
 import com.creative.tmdb.pojomapping.CastMember;
 
 import androidx.annotation.NonNull;
@@ -27,5 +28,6 @@ public class CreditsAllCastViewHolder extends RecyclerView.ViewHolder {
                 .load(itemView.getContext().getResources().getString(R.string.poster_url_prefix) + castMember.getProfileImageUrl())
                 .into(ivImagePoster);
         tvActorName.setText(castMember.getActorName());
+        itemView.setOnClickListener(new OpenCastMemberDetail(castMember.getCreditId()));
     }
 }
